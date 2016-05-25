@@ -1,0 +1,39 @@
+.heading-for-catalog{
+
+    background-color: red;
+    padding: 10px;
+}
+
+
+.front-page-of-catalog{
+    padding: 20px;
+    margin-right: 20px;
+    clear:both;
+    background-color: black;
+
+}
+.nav {
+    float: left;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-inside: 20px;
+    padding: 10px;
+}
+
+.nav1 {
+    float: right;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    margin-top: 20px;
+    margin-inside: 20px;
+    padding: 10px;
+}
+
+img{
+
+    width:100px;
+    height:100px;
+    padding: 5px;
+
+
+}
