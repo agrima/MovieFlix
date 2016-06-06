@@ -1,0 +1,43 @@
+
+.login{
+
+
+    padding: 50px;
+    margin: 450px;
+    margin-top: 250px;
+}
+
+.login-form{
+    text-align: left;
+    font-size: 17px;
+
+}
+
+.signin{
+    display:inline-block;
+
+}
+.heading-for-catalog{
+    float: left;
+    padding:0;
+    margin:0;
+}
+.background{
+    float:left;
+    background: url("http://i0.wp.com/theactionelite.com/site/wp-content/uploads/2013/11/avatar-poster.jpg");
+    background-size: 250%;
+    background-repeat: no-repeat;
+
+}
+
+input{
+
+    width: 100%;
+    height: 25px;
+}
+
+button{
+
+    width: 365%;
+    height: 30px;
+}
