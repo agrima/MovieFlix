@@ -3,24 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title>MovieFlix</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body ng-controller="CatalogController as catalogVm" >
-<div class = "heading-for-catalog" style="background-color: red;">
-    <div id="h">
-        <div class="nav" style="background-color:red; color:white; text-align: left; font-size: 150%"> MovieFlix </div>
-        <div class="nav">
-            kids
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">MovieFlix</a>
         </div>
-        <div class="nav">
-            Recent
-        </div>
-        <span class="nav1">
-            <button ng-click="catalogVm.clicked()">signout</button>
-        </span>
-        <div style="clear: both;"></div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Sort <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">IMDB ratings</a></li>
+                    <li><a href="#">Year</a></li>
+                    <li><a href="#">IMDB votes</a></li>
+                </ul>
+            </li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Filter <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Type</a></li>
+                    <li><a href="#">Year</a></li>
+                    <li><a href="#">Genre</a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a ng-click="catalogVm.clicked()"><span class="glyphicon glyphicon-log-in"></span> SignOut</a></li>
+        </ul>
     </div>
-</div>
+</nav>
 <div class = "front-page-of-catalog" >
     <a href="" ng-repeat="movieLinks in catalogVm.movies">
         <img src={{movieLinks.Poster}} alt="Movie">
@@ -28,6 +42,8 @@
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script src="movie.service.js"></script>
 <script src="app2.js"></script>
 <script src="catalog.controller.js"></script>
