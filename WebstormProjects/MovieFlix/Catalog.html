@@ -17,9 +17,9 @@
             <li class="active"><a href="#">Home</a></li>
             <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Sort <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                    <li><a href="#">IMDB ratings</a></li>
-                    <li><a href="#">Year</a></li>
-                    <li><a href="#">IMDB votes</a></li>
+                    <li><a ng-click="catalogVm.sort('imdbRating')">IMDB ratings</a></li>
+                    <li><a ng-click="catalogVm.sort('Year')">Year</a></li>
+                    <li><a ng-click="catalogVm.sort('imdbVotes')">IMDB votes</a></li>
                 </ul>
             </li>
             <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Filter <span class="caret"></span></a>
@@ -36,7 +36,7 @@
     </div>
 </nav>
 <div class = "front-page-of-catalog" >
-    <a href="" ng-repeat="movieLinks in catalogVm.movies">
+    <a href="" ng-repeat="movieLinks in catalogVm.movies | orderBy: catalogVm.sortValue | filter: SearchText">
         <img src={{movieLinks.Poster}} alt="Movie">
     </a>
 </div>
