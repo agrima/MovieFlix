@@ -14,7 +14,7 @@ html{
     padding: 20px;
     margin-right: 0px;
     clear:both;
-    background-color: black;
+    background-color: white;
 
 }
 .nav {
@@ -41,4 +41,41 @@ img{
     padding: 5px;
 
 
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: red;  /*Sets the text hover color on navbar*/
+}
+
+.navbar-brand{
+    color:red;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active >
+a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    color: red; /*BACKGROUND color for active*/
+    background-color: red;
+}
+
+.navbar-default {
+    background-color: red;
+    border-color: red;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+    color: red;
+    text-decoration: none;
+    background-color: white;  /*change color of links in drop down here*/
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+    text-decoration: none;
+    background-color: silver; /*Change rollover cell color here*/
+}
+
+
+.navbar-default .navbar-nav > li > a {
+    color: red; /*Change active text color here*/
 }

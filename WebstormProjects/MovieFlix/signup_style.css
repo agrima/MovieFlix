@@ -25,6 +25,7 @@ html{
 }
 
 .login-form{
+    padding: 10px;
     text-align: left;
     font-size: 17px;
 
@@ -40,7 +41,6 @@ html{
 }
 .signup{
     display:inline-block;
-
 }
 
 input{

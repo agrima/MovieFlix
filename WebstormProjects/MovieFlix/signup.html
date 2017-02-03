@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="app" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Signup</title>
@@ -7,22 +7,33 @@
 </head>
 <body>
 <div class = "heading-for-catalog">
-    <div class="h">
+    <div ng-controller="MainController as mainVm" class="h">
         <div class="nav" style="color:red; text-align: left; font-size: 150%; padding:10px ; float:left"> MovieFlix</div>
         <span style="float: right;">
-            <button style="">Sign In</button>
+            <button ng-click="mainVm.clickIn()" style="">Sign In</button>
         </span>
         <div style="clear: both;"></div>
     </div>
     <div class="login" style="background-color: lightgray; ">
         <h1 style="font-size: 30px; text-align: left">Create New Account</h1>
-        <form class="login-form">
+        <form name="userForm" class="login-form" novalidate="">
+            <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && userForm.email.$dirty }">
             <label for="userEmail">Email Address</label><br>
-            <input type="text" placeholder="example@doc.com" id="userEmail"/><br>
-            <br>
+            <input type="email" name="email" class="form-control" ng-model="user.email" required>
+            <div ng-messages="userForm.email.$error" ng-if='userForm.email.$dirty'>
+                <p class="help-block" ng-message="required">Email is required</p>
+                <p class="help-block" ng-message="email">Enter a valid email</p>
+            </div>
+            </div>
+            <div class="form-group" ng-class="{ 'has-error' : userForm.password.$invalid && userForm.password.$dirty }">
             <label for="Password">Password</label><br>
-            <input type="text" id="Password"/><br>
-            <br>
+            <input type="password" name="password" class="form-control" ng-model="user.password" required>
+            <div ng-messages="userForm.password.$error" ng-if='userForm.password.$dirty'>
+                <p class="help-block" ng-message="required">Password is required</p>
+                <p class="help-block" ng-message="pattern">Enter a valid password</p>
+            </div>
+
+            </div>
             <div class="signup" style="font-size: large; background-color: orangered;">
                 <button class="signup" style="font-size: large; background-color: orangered;">
                     <span>
@@ -31,5 +42,10 @@
                 </button>
             </div>
         </form>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-messages.min.js"></script>
+        <script src="movie.service.js"></script>
+        <script src="app.js"></script>
+        <script src="main.controller.js"></script>
 </body>
 </html>
